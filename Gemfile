@@ -65,3 +65,4 @@ gem 'devise'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 gem "bulma-rails", "~> 0.9.1"
+gem 'faker',                   '2.1.2'
