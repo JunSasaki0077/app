@@ -47,6 +47,7 @@
 					<p class="panel-heading">
 							By <%= @recipe.user.username %>
 					</p>
+					<%= render 'reviews/form', review: @review, recipe: @recipe %>
 					<div class="panel-block">
 						<p class="control">
 							<%= @recipe.user.profile %>
@@ -60,7 +61,7 @@
 						<% end %>
 				</article>
 			</div>
-			<%= render 'reviews/form', review: @review, recipe: @recipe %>
 		</div>
 	</div>
 </section>
+
