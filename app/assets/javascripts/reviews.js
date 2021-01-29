@@ -9,13 +9,13 @@ for(let i=0; i<stars.length; i++){
 	stars[i].addEventListener("mouseover",function(){
 		for(let j=0; j<stars.length; j++){
 			console.log(stars.length)
-			stars[j].classList.remove("fas-star");
-			stars[j].classList.add("far-star");
+			stars[j].classList.remove("fas","fa-star");
+			stars[j].classList.add("far", "fa-star");
 		}
 		for(let j=0; j<=i; j++){
 			console.log(stars.length)
-			stars[j].classList.remove("far-star");
-			stars[j].classList.add("fas-star");
+			stars[j].classList.remove("far", "fa-star");
+			stars[j].classList.add("fas", "fa-star");
 		}
 	})
 }
