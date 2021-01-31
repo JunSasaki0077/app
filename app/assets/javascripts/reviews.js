@@ -4,18 +4,35 @@ const ratingValueDisplay = document.getElementById("rating-value-display");
 
 let index;
 
-for(let i=0; i<stars.length; i++){
-	console.log(stars.length)
-	stars[i].addEventListener("mouseover",function(){
-		for(let j=0; j<stars.length; j++){
-			console.log(stars.length)
-			stars[j].classList.remove("fas","fa-star");
+for (let i = 0; i < stars.length; i++) {
+	console.log(stars.length);
+	stars[i].addEventListener("mouseover", function () {
+		for (let j = 0; j < stars.length; j++) {
+			console.log(stars.length);
+			stars[j].classList.remove("fas", "fa-star");
 			stars[j].classList.add("far", "fa-star");
 		}
-		for(let j=0; j<=i; j++){
-			console.log(stars.length)
+		for (let j = 0; j <= i; j++) {
+			console.log(stars.length);
 			stars[j].classList.remove("far", "fa-star");
 			stars[j].classList.add("fas", "fa-star");
 		}
-	})
+	});
+	stars[i].addEventListener("click", () => {
+		ratingValue.value = i + 1;
+		ratingValueDisplay.textContent = ratingValue.value;
+		index = i;
+	});
+	stars[i].addEventListener("mouseout", function () {
+		for (let j = 0; j < stars.length; j++) {
+			console.log(stars.length);
+			stars[j].classList.remove("fas", "fa-star");
+			stars[j].classList.add("far", "fa-star");
+		}
+		for (let j = 0; j <= index; j++) {
+			console.log(stars.length);
+			stars[j].classList.remove("far", "fa-star");
+			stars[j].classList.add("fas", "fa-star");
+		}
+	});
 }
