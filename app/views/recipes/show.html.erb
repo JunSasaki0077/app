@@ -25,13 +25,24 @@
 							<p class="title is-4"><%= @recipe.title %></p>
 							</div>
 						</div>
+						<div class="card-content">
+							<div class="content average-score">
+								<div class="star-rating mb-2">
+									<div class="star-rating-front" style="width: <%= @recipe.review_score_percentage %>%">★★★★★</div>
+									<div class="star-rating-back">★★★★★</div>
+								</div>
+								<div class="average-score-display ml-3 pt-2">
+									<%= @recipe.avg_score %>点（<%= @recipe.reviews.count %>件のレビュー）
+								</div>
+							</div>
+						</div>
 						<div class="content">
 							<table class="table is-narrow">
 							<tr>
-							<th>レシピ</th>
+								<th>レシピ</th>
 							</tr>
 							<tr>
-							<td><%= simple_format @recipe.body %></td>
+								<td><%= simple_format @recipe.body %></td>
 							</tr>
 							</table>
 							<% if @recipe.user.id == current_user.id %>
@@ -41,6 +52,7 @@
 					</div>
 				</div>
 			</div>
+
 
 			<div class="column is-4">
 				<article class="panel is-link">

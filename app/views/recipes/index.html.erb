@@ -31,9 +31,25 @@
 									</figure>
 								</div>
 								<div class="media-content">
-									<div class="title"><%= link_to recipe.user.username, user_path(recipe.user.id) %></div>
+									<div class="title"><%= link_to recipe.user.username, user_path(recipe.user.id) %>
+									<%= link_to recipe_reviews_path(recipe), class: "button card-item" do %>
+									レビューを見る
+									<% end %>
+									</div>
 								</div>
 							</div>
+
+					<div class="card-content">
+            <div class="content average-score">
+              <div class="star-rating mb-2">
+                <div class="star-rating-front" style="width: <%= recipe.review_score_percentage %>%">★★★★★</div>
+                <div class="star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display ml-3 pt-2">
+                <%= recipe.avg_score %>点（<%= recipe.reviews.count %>件のレビュー）
+              </div>
+            </div>
+          </div>
 
 							<div class="content">
 								<time><%= recipe.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
